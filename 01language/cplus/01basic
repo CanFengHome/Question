@@ -1,0 +1,98 @@
+1.如何设置 C++ 11 14 17
+    g++ -std=c++17 有些平台可能需要
+    g++ -std=gnu++17
+
+    同样的C99的支持
+    gcc -std=c99
+    gcc -std=gnu99
+
+2.分析结果
+    #include <iostream>
+    using namespace std;
+
+    class SomeThing{
+    public:
+        SomeThing(){
+            cout<<"2 some thing start"<<endl;
+        }
+        ~SomeThing(){
+            cout<<"2 some thing end"<<endl;
+        }
+    };
+
+    class Parent{
+    public:
+        Parent(){
+            cout<<"1 Parent start"<<endl;
+        }
+        ~Parent(){
+            cout<<"1 Parent end"<<endl;
+        }
+    };
+
+    class Child : public Parent{
+    public:
+        Child(){
+            cout<<"3 Child start"<<endl;
+        }
+        ~Child(){
+            cout<<"3 Child end"<<endl;
+        }
+    private:
+        SomeThing m_dataMember;
+    };
+
+    int main()
+    {
+        Child myChild;
+        cout<<endl;
+        
+        return 0;
+    }
+
+    答：
+    myChild
+        构造
+            父类
+            成员
+            自己
+        析构
+            自己
+            成员
+            父类
+    so
+        1 Parent start
+        2 some thing start
+        3 Child start
+        3 Child end
+        2 some thing end
+        1 Parent end
+
+3.什么时候使用 explicit
+    class Cls
+    {
+    public:
+        explicit Cls(int one);
+    };
+
+5.C++如何使用c的代码?
+    in example.h 中
+    #ifndef EXAMPLE_H_
+    #define EXAMPLE_H_
+
+    ifdefine __cplusplus
+    extern "C" {
+    #endif
+
+    ifdefine __cplusplus
+    }
+    #endif
+
+    #endif
+
+6.C++实现类似MyString的类
+    见01MyString。需要注意的是
+        构造
+        拷贝构造
+        析构
+        赋值
