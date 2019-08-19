@@ -1,0 +1,10 @@
+1.写一行数据 age money
+  读取一行数据
+  详见02readwrite
+  使用到了<fstream> ifstream ofstream
+  使用了<sstream> istringstream 
+  getline
+  另外注意读取文件时的 peek 判断
+
+
+2.读取文件中的单词
