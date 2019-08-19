@@ -1,0 +1,5 @@
+1.获取当前时间格式为 Y-M-D H:M:S
+  获取当前天的时间
+
+    见 07time test_time.cpp
+
