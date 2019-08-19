@@ -24,4 +24,7 @@
     05string test_split.cpp
 
 6.格式化返回字符串
-    
+    05string test_stringformat.cpp
+
+7.从文件路径中获取文件名称
+    05string test_getfilename.cpp

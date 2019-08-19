@@ -3,3 +3,6 @@
 
     见 07time test_time.cpp
 
+2.封装一个ClockTimer
+  见 07time ClockTimer test_clocktimer.cpp
+
