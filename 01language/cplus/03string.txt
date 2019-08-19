@@ -17,4 +17,9 @@
     详细见04strnum test_hex_int.cpp
 
 4.去除字符串前后空格
-    
+    见05string test_trim.cpp
+    string.erase string.find_first_not_of string.find_last_not_of
+
+5.分割字符串
+    05string test_split.cpp
+

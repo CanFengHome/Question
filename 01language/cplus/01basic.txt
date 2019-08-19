@@ -96,3 +96,5 @@
         拷贝构造
         析构
         赋值
+
+7.err_exit(const char* format, ...)的实现
