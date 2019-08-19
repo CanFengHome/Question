@@ -1,0 +1,14 @@
+1.字符串和数值之间的转换
+    std::to_string(value)
+
+    std::stoul(str, *pos, base)  string to u long
+    std::stoull
+    std::stoi
+    std::stol
+    std::stoll
+    std::stof
+    std::stod
+    std::stold
+
+2.自定义数值和字符串之间的转换
+    
