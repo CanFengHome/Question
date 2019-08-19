@@ -11,4 +11,10 @@
     std::stold
 
 2.自定义数值和字符串之间的转换
+    详见04strnum 中的test_strnum.cpp
+
+3.16禁止字符串和int之间的转换
+    详细见04strnum test_hex_int.cpp
+
+4.去除字符串前后空格
     
