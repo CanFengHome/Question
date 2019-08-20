@@ -1,0 +1,26 @@
+1.查看一个文件大小
+    int stat(const char *pathname, struct stat *statbuf);
+    -1 error
+
+    struct stat {
+        ino_t st_ino;
+        mode_t st_mode;
+        uid_t st_uid;
+        gid_t st_gid;
+        off_t st_size;
+        ...
+    }
+
+    lstat 会返回符号链接文件本身的信息，而不是像stat返回的是引用的源文件的信息
+
+2.目录的获取和改变
+    char *getcwd(char *buf, size_t size);
+    int chdir(const char *path);
+
+3.目录的读取，统计一个文件夹下有多少文件
+    DIR *opendir(const char *name);
+    int closedir(DIR *dirp);
+    struct dirent *readdir(DIR *dirp);
+    struct dirent
+
+
