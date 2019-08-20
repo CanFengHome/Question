@@ -6,5 +6,12 @@
 
 2.父进程写，子进程读取并打印到屏幕
     int pipe(int pipefd[2]);
-    
+
     test_ipc/test_pipe.cpp
+
+3.mmap实现子进程和父进程间通信。子进程写入信息，父进程获取信息
+    #include <sys/mman.h>
+    void *mmap(void *addr, size_t length, int prot, int flags,
+                  int fd, off_t offset);
+    int munmap(void *addr, size_t length);
+    MAP_FAILED
