@@ -15,3 +15,16 @@
                   int fd, off_t offset);
     int munmap(void *addr, size_t length);
     MAP_FAILED
+
+    test_ipc/test_mmap.cpp
+
+4.实现文件多进程拷贝
+    
+
+5.实现简单的交互式shell。
+6.简易本地聊天室
+    有服务器端和客户端两方
+    服务启动监听客户端请求，并负责记录处理客户端登录、聊天、退出等相关数据
+    客户端完成登录、发起聊天等操作
+    可以借助服务器转发向某个指定客户端完成数据包发送(聊天)
+
