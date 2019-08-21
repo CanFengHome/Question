@@ -20,12 +20,36 @@
 
 4.实现文件多进程拷贝
     多进程利用共享mmap的方式 test_ipc/test_process_copy
-    也可以利用多进程文件描述符表的不同来处理 
+    也可以利用多进程文件描述符表的不同来处理 test_ipc/test_file_copy.cpp
+        和mmap不同的是，打开文件后，可以通过文件IO操作，来拓展文件大小，而不必事先先创建好文件
 
-5.实现简单的交互式shell。
-6.简易本地聊天室
-    有服务器端和客户端两方
-    服务启动监听客户端请求，并负责记录处理客户端登录、聊天、退出等相关数据
-    客户端完成登录、发起聊天等操作
-    可以借助服务器转发向某个指定客户端完成数据包发送(聊天)
+5.信号
+    1.信号的到来会打断一些阻塞，比如read write. 
+        见例子 test_signal/test_sigaction.cpp
+        如果不ctrl+c，则十秒打印10个*，而一旦ctrl+c 就会打断sleep，加速输出了*，程序很快结束
 
+    2.使用计时系统和alarm来计算累加
+        test_signal/test_cal_clock.cpp
+        test_signal/test_cal_alarm.cpp
+
+        feng@chencanfeng:~/study/Question/02Linux/test_signal$ time ./test_cal_alarm
+        2597985335
+
+        real    0m5.017s
+        user    0m5.000s
+        sys     0m0.016s
+        feng@chencanfeng:~/study/Question/02Linux/test_signal$ time ./test_cal_clock
+        3258619
+
+        real    0m5.012s
+        user    0m1.750s
+        sys     0m3.250s
+
+        从效率来看两者差距甚大，主要原因应该是clock不断的调用系统时钟，而alarm大部分时间在user态
+        换成time的方式，会比std::chrono 好一些，但是还是会不断的调用系统函数
+
+    3.间隔打印文件内容
+        使用sleep方式
+        使用alarm方式
+        使用settimer方式
+        
