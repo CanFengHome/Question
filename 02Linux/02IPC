@@ -19,7 +19,8 @@
     test_ipc/test_mmap.cpp
 
 4.实现文件多进程拷贝
-    
+    多进程利用共享mmap的方式 test_ipc/test_process_copy
+    也可以利用多进程文件描述符表的不同来处理 
 
 5.实现简单的交互式shell。
 6.简易本地聊天室
