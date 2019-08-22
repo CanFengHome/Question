@@ -57,5 +57,21 @@
         流量控制 cps
         上限 burst
         token +- cps
+
+        test_signal_tbf
         
+    5.sigpromask 每5个*一行，打印期间屏蔽掉 SIGINT
+        test_signal/test_sigpromask.cpp
+
+    6.sigsuspend 信号驱动
+        test_signal/test_sigsuspend.cpp
+        block set
+        ...
+        suspend(unbloc set) 会干：
+            1.unbloc set 
+            2.pause 
+                如果此时对应的pending位是1，则会响应信号，
+                否则pending对应位是0 会pause到这里.如果有新的信号，会激活处理
+            3.bloc set 
+
         
