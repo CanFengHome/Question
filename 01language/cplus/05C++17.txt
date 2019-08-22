@@ -1,0 +1,2 @@
+1.decltype 声明一个模板方法的返回值
+    08newstd/test_decltype.cpp
