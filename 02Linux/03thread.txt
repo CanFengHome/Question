@@ -4,3 +4,13 @@
 2.多线程交叉法求质数 10个线程
     test_thread/test_prime_cross.cpp
 
+3.多线程并发同步
+    1.多线程修改一个数累加
+        test_thread/test_mutex_num.cpp
+
+    2.条件变量实现任务下发 实现求解质数
+        test_thread/test_prime_pool.cpp
+        利用状态机的思考方式解决问题，分别考虑task线程和N个work线程
+        分别考虑他们的状态，最后再考虑同步问题，也就是用条件变量来控制先后执行问题
+
+    
