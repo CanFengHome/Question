@@ -1,2 +1,6 @@
 1.多线程求质数
+    test_thread/test_prime.cpp
+
+2.多线程交叉法求质数 10个线程
+    test_thread/test_prime_cross.cpp
 
