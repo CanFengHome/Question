@@ -17,6 +17,7 @@ enum EState
 {
     SM_R,
     SM_W,
+SM_AUTO,
     SM_EX,
     SM_T
 };
@@ -99,12 +100,14 @@ void relay(int readfd, int writefd)
         FD_SET(mache.wdfd, &wrset);
 
         // 监视
-        if (select(std::max(mache.rdfd, mache.wdfd)+1, &rdset, &wrset, NULL, NULL) < 0) {
-            err_exit("select");
+        if (mache.state < SM_AUTO) {
+            if (select(std::max(mache.rdfd, mache.wdfd)+1, &rdset, &wrset, NULL, NULL) < 0) {
+                err_exit("select");
+            }
         }
         
         // 监视结果
-        if (FD_ISSET(mache.rdfd, &rdset) || FD_ISSET(mache.wdfd, &wrset))
+        if (FD_ISSET(mache.rdfd, &rdset) || FD_ISSET(mache.wdfd, &wrset) || mache.state > SM_AUTO)
         {
             drive(&mache);
         }
