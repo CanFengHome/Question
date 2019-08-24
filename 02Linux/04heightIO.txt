@@ -9,3 +9,7 @@
 使用slect进行改写，当检测到有读写事件的时候驱动状态机。
 也就是高效IO解决IO频繁抢夺CPU资源。
     test_heightIO/test_select.cpp
+
+3.用poll改写上面的代码
+    test_heightIO/test_poll.cpp
+
