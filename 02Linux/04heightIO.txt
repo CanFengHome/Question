@@ -1,0 +1,11 @@
+1.有限状态机实现
+    A ==== B
+    A:从终端读入数据，写入管道    client
+    B:从管道读取数据 写入终端   server
+
+    test_state_mache/test_state.cpp
+
+2.上面的代码中将读写的fd设置成了nohang的方式，如此不断的while，占满了CPU。
+使用slect进行改写，当检测到有读写事件的时候驱动状态机。
+也就是高效IO解决IO频繁抢夺CPU资源。
+    test_heightIO/test_select.cpp
