@@ -98,3 +98,4 @@
         赋值
 
 7.err_exit(const char* format, ...)的实现
+    06basic/test_errexit.cpp
