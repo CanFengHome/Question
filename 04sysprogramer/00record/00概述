@@ -110,5 +110,24 @@
         12. foreach thiz, visit context
         13. dlist_destroy
 
+    3.dlist.h dlist.c
+        typedef struct _DList DList;
+        1.dlist_create
+        2.dlist_insert_by_index(DList* thiz, int index, void* data)
+        3.dlist_prepend
+        4.dlist_append
+        5.dlist_pop_by_index int index return data
+        6.dlist_pop_head
+        7.dlist_pop_tail
+        8.dlist_get_val_by_index
+        9.dlist_get_head
+        10.dlist_get_tail
+        11.dlist_length
+        12.dlist_find FindFunc
+        13.dlist_foreach
+        14.dlist_destroy DestroyFunc
+
+    4.code test 
+    
 
 }
