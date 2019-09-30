@@ -1,0 +1,53 @@
+静态库制作
+ar -r libmycal.a add.o sub.o     -r 替换归档文件中已有的文件或加入新文件
+ar -t libmycal.a 查看包中的内容
+ar -x libmycal.a 解压所有文件
+ar -x libmycal.a -o add.o 仅解压add.o文件
+
+step：
+1. gcc -c -static add.c -o add.o
+    static 选项只是告诉编译器，如果操作系统支持动态链接，该选项组织其生成动态链接库
+
+2. ar
+    ar -r libmycal.a add.o
+
+3. view
+    ar -t libmycal
+
+4. use
+    #include ".h"
+    add
+
+5. link
+    gcc main.c -o app -L. -lmycal
+    -Ldir含义是在dir下寻找要链接的库文件
+    -lname 是链接库名为 libname.a的文件
+
+=======================
+实践：
+1.目录结构
+    include
+        add.h sub.h
+    src
+        add.c sub.c
+        Makefile
+    obj
+        add.o sub.o
+    lib
+        libmycal.a
+    test
+        bin
+            app
+        main.c
+        Makefile
+
+src/Makefile
+    gcc -Wall -g -std=c99 -I../include -static -c add.c -o ../obj/add.o
+    gcc -Wall -g -std=c99 -I../include -static -c sub.c -o ../obj/sub.o
+
+    ar -r ../lib/libmycal.a ../obj/*.o
+
+
+test/Makefile
+    all:
+        gcc -Wall -g -std=c99 -I../include main.c -o bin/app -L../lib -lmycal

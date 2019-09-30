@@ -80,11 +80,11 @@
     #ifndef EXAMPLE_H_
     #define EXAMPLE_H_
 
-    ifdefine __cplusplus
+    #ifdef __cplusplus
     extern "C" {
     #endif
 
-    ifdefine __cplusplus
+    #ifdef __cplusplus
     }
     #endif
 

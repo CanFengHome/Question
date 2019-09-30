@@ -1,0 +1,20 @@
+1.查看gcc版本号
+    gcc -v
+
+2.指定头文件目录
+    gcc -I../include
+
+3.编译.c，生成.o文件，不进行链接
+    gcc add.c -c add.o
+
+4.提示更多警告信息 包含调试信息
+    gcc -Wall -g
+
+5.n=0∼3 编译优化，n越大优化得越多
+    gcc -O1
+
+6.编译时定义宏
+    gcc -DXXX
+
+7.生成预处理文件
+    gcc add.c -E
