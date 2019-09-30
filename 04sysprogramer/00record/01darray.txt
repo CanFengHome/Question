@@ -1,9 +1,0 @@
-1.确定需求
-    insert prepend append
-    delete delete_head delete_tail
-    get_by_index get_head get_tail
-    length
-    find
-    foreach
-2.分析测试需求和对象接口需求
-3.确定测试case
